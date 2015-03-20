@@ -30,7 +30,7 @@ public class AHttpRHCliente extends AsyncHttpResponseHandler {
     @Override
     public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
         // called when response HTTP status is "4XX" (eg. 401, 403, 404)
-        Log.e("Error", "Status "+statusCode);
+        Log.e("Error AHttpRHCliente", "Status " + statusCode+" "+e.getMessage());
     }
 
     public Cliente getC() {

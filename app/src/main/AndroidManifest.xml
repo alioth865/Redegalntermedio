@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yahoo.alioth865.redegalntermedio" >
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -9,7 +10,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".Registro"
+            android:name=".Vistas.Registro"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,17 +19,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Principal"
+            android:name=".Vistas.Principal"
             android:label="@string/app_name" >
         </activity>
-
         <activity
-            android:name=".Customer"
+            android:name=".Vistas.Customer"
             android:label="@string/title_activity_customer" >
         </activity>
         <activity
-            android:name=".Product"
+            android:name=".Vistas.Product"
             android:label="@string/title_activity_product" >
+        </activity>
+        <activity
+            android:name=".Vistas.Categorias"
+            android:label="@string/title_activity_categorias" >
         </activity>
     </application>
 

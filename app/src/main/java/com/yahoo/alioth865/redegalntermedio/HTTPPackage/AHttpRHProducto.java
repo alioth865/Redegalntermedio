@@ -15,11 +15,17 @@ import org.xml.sax.SAXException;
  */
 public class AHttpRHProducto extends AsyncHttpResponseHandler{
     private Producto producto=new Producto();
+    private String language;
+
+    public AHttpRHProducto(String language) {
+        this.language = language;
+    }
+
     @Override
     public void onSuccess(int statusCode, Header[] headers, byte[] response) {
         // called when response HTTP status is "200 OK"
         String xml= new String(response);
-        XMLParserProduct parser=new XMLParserProduct(xml);
+        XMLParserProduct parser=new XMLParserProduct(xml, language);
         try {
             producto=parser.parse();
         }catch (SAXException e){
@@ -31,7 +37,7 @@ public class AHttpRHProducto extends AsyncHttpResponseHandler{
     @Override
     public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
         // called when response HTTP status is "4XX" (eg. 401, 403, 404)
-        Log.e("Error", "Status "+statusCode);
+        Log.e("Error AHttpRHProducto", "Status " + statusCode+" "+e.getMessage());
     }
 
     public Producto getProducto() {
